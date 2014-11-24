@@ -8,7 +8,7 @@
 <html lang="es">
     <head>
         <title>Liverpool - Resgistrar producto</title>
-        <%@include file="cabecera.jsp"%>
+        <%@include file="header.jsp"%>
 
     <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -107,7 +107,7 @@
 
 
 
-        <%@include file="piedepagina.jsp" %>
+        <%@include file="footer.jsp" %>
     </div><!--/.container-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../b3.1.1/js/bootstrap.min.js"></script>

@@ -5,36 +5,15 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <!-- Menú productos -->
-        <action name="reporteInventario" class="actions.ReportesAction" method="generarReporteInventario">
-            <result name="success">/JSP/successReport.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
         
-        <!-- Otros Link -->
-        <action name="menuAdmin">
+        <action name="menu">
             <result name="success">/JSP/menuAdmin.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        
-        <action name="menuEmpleado">
-            <result name="success">/JSP/menuEmpleado.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        
-        <action name="index">
-            <result name="success">/JSP/index.jsp</result>
             <result name="input">/JSP/error.jsp</result>
         </action> 
         
         <!-- Clientes CRUD -->
         <action name="clienteC" class="actions.ClienteAction" method="registrarCliente">
             <result name="success" type="redirect">clienteR</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        
-        <action name="clienteC2" class="actions.ClienteAction" method="registrarCliente">
-            <result name="success">success.jsp</result>
             <result name="input">/JSP/error.jsp</result>
         </action>
         
@@ -61,11 +40,6 @@
         <!-- Clientes Link -->
         <action name="clienteCreate">
             <result name="success">/JSP/clienteC.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        
-        <action name="clienteCreate2">
-            <result name="success">/JSP/clienteC2.jsp</result>
             <result name="input">/JSP/error.jsp</result>
         </action>
         
@@ -100,72 +74,6 @@
             <result name="success">/JSP/empleadoC.jsp</result>
             <result name="input">/JSP/error.jsp</result>
         </action> 
-        
-        <!-- Menú productos -->
-        <action name="tecnologia">
-            <result name="success">/JSP/Productos/tecnologia.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="computadoras">
-            <result name="success">/JSP/Productos/computadoras.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="deporte">
-            <result name="success">/JSP/Productos/deporte.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="hogar">
-            <result name="success">/JSP/Productos/hogar.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="muebles">
-            <result name="success">/JSP/Productos/muebles.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="lineaBlanca">
-            <result name="success">/JSP/Productos/lineaBlanca.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="saludYBelleza">
-            <result name="success">/JSP/Productos/saludYBelleza.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="damas">
-            <result name="success">/JSP/Productos/damas.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="caballeros">
-            <result name="success">/JSP/Productos/caballeros.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="zapatos">
-            <result name="success">/JSP/Productos/zapatos.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="bebes">
-            <result name="success">/JSP/Productos/bebes.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="infantil">
-            <result name="success">/JSP/Productos/infantil.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="videojuegos">
-            <result name="success">/JSP/Productos/videojuegos.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="juguetes">
-            <result name="success">/JSP/Productos/juguetes.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="libros">
-            <result name="success">/JSP/Productos/libros.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
-        <action name="vinos">
-            <result name="success">/JSP/Productos/vinos.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
-        </action>
 
     </package>
 </struts>

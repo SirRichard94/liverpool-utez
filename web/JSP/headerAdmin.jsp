@@ -60,7 +60,7 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <s:url id="menu" action="menuAdmin.action"/>
+                <s:url id="menu" action="menu.action"/>
                 <s:a href="%{menu}">Menú Administrador</s:a>
             </li>
             <li>
@@ -77,11 +77,7 @@
             </li>
             <li>
                 <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte2.png" width="10%" height="10%"> Reporte de inventario</s:a>
-            </li>
-            <li>
-                <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte.png" width="10%" height="10%"> Reporte estadístico</s:a>
+                <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte.png" width="10%" height="10%"> Reportes</s:a>
             </li>
             <li>
                 <s:url id="consultarEmpleados" action="consultarE.action"/>
@@ -95,15 +91,37 @@
     </nav>
     <!-- Fixed navbar -->
     <br>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 j">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <s:url id="menu" action="menuAdmin.action"/>
-            <s:a href="%{menu}"><img src="../imagenes/Logo-Liverpool.jpg" class="img-rounded" width="100%" height="25%"></s:a>
+            <a href="index.jsp" title="Inicio"><img src="../imagenes/Logo-Liverpool.jpg" class="img-rounded" width="100%" height="25%"></a>
         </div>
 
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Categoría <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Tecnología</a></li>
+                            <li><a href="#about">Computadoras</a></li>
+                            <li><a href="#contact">Deporte</a></li>
+                            <li><a href="#contact">Hogar</a></li>
+                            <li><a href="#contact">Muebles</a></li>
+                            <li><a href="#contact">Línea Blanca</a></li>
+                            <li><a href="#contact">Salud y Belleza</a></li>
+                            <li><a href="#contact">Damas</a></li>
+                            <li><a href="#contact">Caballeros</a></li>
+                            <li><a href="#contact">Zapatos</a></li>
+                            <li><a href="#contact">Bebés</a></li>
+                            <li><a href="#contact">Infantil</a></li>
+                        </ul>
+                    </div>
+
+                    <input type="text" class="form-control">
+                </div>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <a class="btn btn-primary" href="#miventana" rel="tooltip" data-toggle="modal" role="button">Cerrar sesión</a>
@@ -112,8 +130,51 @@
             </div>
         </div>
 
+
+        <div class="col-md-12">
+            <br>
+        </div>
+
+
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-            <img class="img-rounded" src="../imagenes/rosa.jpg" width="100%" height="15">
+            <div class="navbar navbar-default navbar-fixed navbar-nav nav-justified" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Categorias</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Tecnología</a></li>
+                            <li><a href="#about">Computadoras</a></li>
+                            <li><a href="#contact">Deporte</a></li>
+                            <li><a href="#contact">Hogar</a></li>
+                            <li><a href="#contact">Muebles</a></li>
+                            <li><a href="#contact">Línea Blanca</a></li>
+                            <li><a href="#contact">Salud y Belleza</a></li>
+                            <li><a href="#contact">Damas</a></li>
+                            <li><a href="#contact">Caballeros</a></li>
+                            <li><a href="#contact">Zapatos</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Más<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Bebes</a></li>
+                                    <li><a href="#">Infantil</a></li>                
+                                    <li><a href="#">Videojuegos</a></li>
+                                    <li><a href="#">Juguetes</a></li>
+                                    <li><a href="#">Libros CD y DVD</a></li>
+                                    <li><a href="#">Vinos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>       
+            </div>
         </div>
         <div class="col-md-12">
             <br>

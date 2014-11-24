@@ -2,37 +2,29 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package beans;
+package actions;
+
+import beans.ProductoBean;
+import com.opensymphony.xwork2.ActionSupport;
+import daos.ProductoDao;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Eduardo
  */
-public class ProductoBean {
-    private int productoId;
-    private int codigo;
-    private String nombre;
-    private String marca;
-    private String categoria;
-    private float precioCompra;
-    private float precioVenta;
-    private int existencias;
-    private String estado;
-
-    public ProductoBean() {
-    }
-
-    public ProductoBean(int productoId,int codigo, String nombre, String marca, String categoria, float precioCompra, float precioVenta, int existencias, String estado) {
-        this.productoId=productoId;
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.marca = marca;
-        this.categoria = categoria;
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
-        this.existencias = existencias;
-        this.estado = estado;
-    }
+public class ProductoAction extends ActionSupport{
+    int productoId;
+    int codigo;
+    String nombre;
+    String marca;
+    String categoria;
+    float precioCompra;
+    float precioVenta;
+    int existencias;
+    String estado;
 
     public int getProductoId() {
         return productoId;
@@ -106,5 +98,20 @@ public class ProductoBean {
         this.estado = estado;
     }
     
+    public String registrarProducto() throws SQLException{
+        ProductoBean pro=new ProductoBean(productoId, codigo, nombre, marca, categoria, precioCompra, precioVenta, existencias, estado);
+        ProductoDao producto= new ProductoDao();
+        producto.registroProducto(pro);
+        return SUCCESS;
+    }
     
+    List<ProductoBean> lista = new ArrayList();
+    
+     public List<ProductoBean> getLista() {
+        return lista;
+    }
+
+    public void setLista(List<ProductoBean> lista) {
+        this.lista = lista;
+    }
 }
