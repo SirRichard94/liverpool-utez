@@ -1,5 +1,6 @@
 
-        <meta charset="utf-8">
+        <%@page import="java.util.List"%>
+<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Carlos Jaimez">
@@ -79,9 +80,21 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <a class="btn btn-primary" href="#miventana" rel="tooltip" data-toggle="modal" role="button">Iniciar sesión</a>
-                    <a class="btn btn-primary" href="registro_usuario.jsp" role="button">Registrate</a>
-                    <img src="../imagenes/carrito.png" class="img-rounded" width="12.5%" height="25%"><span class="badge">10</span>
+			
+			<s:if test='#session.loginId != null' >
+				<a class="btn btn-primary" 
+				   href='<s:url action="logoutAction"/>' 
+				   rel="tooltip" data-toggle="modal" 
+				   role="button">Cerrar sesión</a>
+
+				   <img src="../imagenes/carrito.png" class="img-rounded" width="12.5%" height="25%" alt='carrito'><span class="badge"><%=((List)session.getAttribute("carrito")).size()%></span>
+			</s:if>
+			<s:else>
+				<a class="btn btn-primary" href="#miventana" rel="tooltip" data-toggle="modal" role="button">Iniciar sesión</a>
+				<a class="btn btn-primary" href="clienteC.jsp" role="button">Registrate</a>
+			</s:else>
+
+		    
                 </div>
             </div>
 
@@ -145,17 +158,17 @@
                         <img class="img-rounded" src="../imagenes/rosa.jpg" width="100%" height="10">
                     </div>
                     <div class="modal-body">
-                        <s:form action="#" name="#" method="post" theme="simple" cssClass="form-horizontal">
+                        <s:form action="loginAction" name="#" method="post" theme="simple" cssClass="form-horizontal">
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Nombre usuario:</label>
                                 <div class="col-lg-8">
-                                    <s:textfield name="nombre" cssClass="form-control" placeholder="Nombre de usuario"/>
+                                    <s:textfield name="usuario" cssClass="form-control" placeholder="Nombre de usuario"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Contraseña:</label>
                                 <div class="col-lg-8">
-                                    <s:textfield name="password" cssClass="form-control" placeholder="Contraseña"/>
+                                    <s:password name="password" cssClass="form-control" placeholder="Contraseña"/>
                                 </div>
                             </div>
                             <div class="form-group">

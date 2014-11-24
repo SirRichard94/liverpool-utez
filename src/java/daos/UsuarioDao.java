@@ -205,6 +205,12 @@ public class UsuarioDao {
     }
 
 	public UsuarioBean validarLogin(String usuario, String password) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		UsuarioBean u = null;
+		if(usuario.equals("ricardo") && password.equals("123")){
+			u = new UsuarioBean();
+			u.setTipoU("Administrador");
+		}
+		
+		return u;
 	}
 }

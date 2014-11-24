@@ -105,6 +105,20 @@ public class ProductoBean {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+	@Override
+	public boolean equals(Object o) {
+		if (! (o instanceof ProductoBean)) return false;
+		
+		ProductoBean p = (ProductoBean) o;
+		
+		return p.getCodigo() == this.getCodigo();
+	}
+
+	@Override
+	public int hashCode() {
+		return codigo * 5;
+	}
     
     
 }

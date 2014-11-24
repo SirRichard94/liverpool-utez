@@ -22,17 +22,17 @@
         <div class="col-md-12">
             <br>
         </div>
-        <s:form action="#" name="#" method="post" theme="simple" cssClass="form-horizontal">
+        <s:form action="loginAction" name="#" method="post" theme="simple" cssClass="form-horizontal">
             <div class="form-group">
                 <label class="col-lg-2 control-label">Nombre usuario:</label>
                 <div class="col-lg-8">
-                    <s:textfield name="nombre" cssClass="form-control" placeholder="Nombre de usuario"/>
+                    <s:textfield name="usuario" cssClass="form-control" placeholder="Nombre de usuario"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-2 control-label">Contraseña:</label>
                 <div class="col-lg-8">
-                    <s:textfield name="password" cssClass="form-control" placeholder="Contraseña"/>
+			<s:password name="password" cssClass="form-control" placeholder="Contraseña"/>
                 </div>
             </div>
             <div class="form-group">
