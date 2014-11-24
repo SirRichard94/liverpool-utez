@@ -5,7 +5,7 @@
 <struts>
     <!-- Configuration for the default package. -->
 <package name="default" extends="struts-default"> 
-        
+    
          <!-- Interceptor Login-->
         <interceptors>
                 <interceptor class="interceptors.LoginInterceptor" name="loginInterceptor">
@@ -16,10 +16,15 @@
                 </interceptor-stack>
         </interceptors>
         
+       <global-results>
+            <result name="login">/JSP/login.jsp</result>
+            <result name="error" >/JSP/error.jsp </result>
+            <result name="input">/JSP/error.jsp</result>
+        </global-results>
+        
          <!-- Login-->
          <action name="actionlogin" class="actions.LoginAction" method="login">
             <result name="success">/JSP/index.jsp</result>
-            <result name="login">/JSP/login.jsp</result>
         </action> 
         
         <action name="actionLogout" class="actions.LoginAction" method="logOut">
@@ -38,65 +43,58 @@
         <!-- Clientes CRUD -->
         <action name="clienteC" class="actions.ClienteAction" method="registrarCliente">
             <result name="success" type="redirect">clienteR</result>
-            <result name="input">/JSP/error.jsp</result>
+            
         </action>
         
         <action name="clienteR" class="actions.ClienteAction" method="consultarClientes">
             <result name="success">clienteR.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteU1" class="actions.ClienteAction" method="consultarClienteIndividual">
             <result name="success">/JSP/clienteU.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteU2" class="actions.ClienteAction" method="actualizarCliente">
             <result name="success" type="redirect">clienteR</result>
-            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteD" class="actions.ClienteAction" method="eliminarCliente">
             <result name="success" type="redirect">clienteR</result>
-            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <!-- Clientes Link -->
         <action name="clienteCreate">
             <result name="success">/JSP/clienteC.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <!-- Empleados CRUD -->
         <action name="empleadoC" class="actions.EmpleadoAction" method="registrarEmpleado">
             <result name="success" type="redirect">empleadoR</result>
-            <result name="input">/JSP/error.jsp</result>
+            
         </action> 
         
         <action name="empleadoR" class="actions.EmpleadoAction" method="consultarEmpleados">
             <result name="success">/JSP/empleadoR.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
+            
         </action>
         
         <action name="empleadoU1" class="actions.EmpleadoAction" method="consultarEmpleadoIndividual">
             <result name="success">/JSP/empleadoU.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
+            
         </action>
         
         <action name="empleadoU2" class="actions.EmpleadoAction" method="actualizarEmpleado">
             <result name="success" type="redirect">empleadoR</result>
-            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="empleadoD" class="actions.EmpleadoAction" method="eliminarEmpleado">
             <result name="success" type="redirect">empleadoR</result>
-            <result name="input">/JSP/error.jsp</result>
+
         </action>
         
         <!-- Empleados Link -->
         <action name="empleadoCreate">
             <result name="success">/JSP/empleadoC.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
         </action> 
 
 </package>

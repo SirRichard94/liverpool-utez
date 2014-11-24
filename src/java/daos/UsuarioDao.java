@@ -217,7 +217,7 @@ public class UsuarioDao {
 		    u.setIdUsuario(2);
 		    u.setNombreU(usuario);
 		    u.setPassword(pass);
-		    u.setTipoU("NO SE");
+		    u.setTipoU("Administrador");
 		    
 		    return u;
 	    }else{

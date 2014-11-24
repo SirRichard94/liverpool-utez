@@ -32,7 +32,9 @@
             <div class="col-6 col-sm-6 col-lg-6">
                 <h2>Contenido2</h2>
                 <p> contenido contenido contenido contenido contenido </p>
-                <p><a class="btn btn-primary" href="#" role="button">más &raquo;</a></p>
+		
+		
+                <p><a class="btn btn-primary" href='<s:url action="home"/>' role="button">más &raquo;</a></p>
             </div><!--/span-->
 
         </div><!--/span-->

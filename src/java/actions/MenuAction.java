@@ -24,6 +24,8 @@ public class MenuAction extends ActionSupport implements SessionAware{
 		UsuarioBean usuario = new UsuarioDao()
 			.consultarUsuario((Integer)session.get("loginId"));
 		
+		if (usuario == null) return LOGIN;
+		
 		if (usuario.getTipoU().equals("Administrador")){
 			return "administrador";
 		}else if(usuario.getTipoU().equals("Empleado")){
@@ -39,6 +41,10 @@ public class MenuAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String, Object> map) {
 		this.session = map;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
 	}
 	
 	
