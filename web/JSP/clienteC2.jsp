@@ -9,16 +9,16 @@
 <html lang="es">
     <head>
         <title>Liverpool - Resgistrar cliente</title>
-        <%@include file="headerAdmin.jsp"%>
+        <%@include file="header.jsp"%>
 
     <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h1>Registrar cliente</h1>
+            <h1>Registrate</h1>
         </div><!--/span-->
         <div class="col-md-12">
             <br>
         </div>
-        <s:form action="clienteC" name="registrarCliente" method="post" theme="simple" cssClass="form-horizontal">
+        <s:form action="clienteC2" name="registrarCliente" method="post" theme="simple" cssClass="form-horizontal">
             <div class="col-6 col-sm-6 col-lg-6">
                 <h4 id="letras_rosas">Datos personales</h4>
                 <div class="form-group">

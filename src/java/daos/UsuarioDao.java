@@ -203,25 +203,4 @@ public class UsuarioDao {
         }
         return status;
     }
-    
-    public UsuarioBean validarLogin(String usuario, String pass){
-	    //temporal
-	    if (usuario.equals("ricardo") && pass.equals("123")){
-		    UsuarioBean u =  new UsuarioBean();
-		    u.setApellidoM("Torres");
-		    u.setApellidoP("Rodriguez");
-		    u.setCuentaB(123435);
-		    u.setDireccion("Sin casa");
-		    u.setEmail("asda@asdas.asd");
-		    u.setFechaN("12/32/32");
-		    u.setIdUsuario(2);
-		    u.setNombreU(usuario);
-		    u.setPassword(pass);
-		    u.setTipoU("Administrador");
-		    
-		    return u;
-	    }else{
-	    return null;
-	    }
-    }
 }

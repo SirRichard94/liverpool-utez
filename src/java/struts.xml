@@ -4,98 +4,168 @@
 
 <struts>
     <!-- Configuration for the default package. -->
-<package name="default" extends="struts-default"> 
-    
-         <!-- Interceptor Login-->
-        <interceptors>
-                <interceptor class="interceptors.LoginInterceptor" name="loginInterceptor">
-                </interceptor>
-                <interceptor-stack name="loginStack">
-                        <interceptor-ref name="loginInterceptor" />
-                        <interceptor-ref name="defaultStack" />
-                </interceptor-stack>
-        </interceptors>
-        
-       <global-results>
-            <result name="login">/JSP/login.jsp</result>
-            <result name="error" >/JSP/error.jsp </result>
+    <package name="default" extends="struts-default">
+        <!-- Menú productos -->
+        <action name="reporteInventario" class="actions.ReportesAction" method="generarReporteInventario">
+            <result name="success">/JSP/successReport.jsp</result>
             <result name="input">/JSP/error.jsp</result>
-        </global-results>
-        
-         <!-- Login-->
-         <action name="actionlogin" class="actions.LoginAction" method="login">
-            <result name="success">/JSP/index.jsp</result>
-        </action> 
-        
-        <action name="actionLogout" class="actions.LoginAction" method="logOut">
-                <result name="success">/JSP/index.jsp</result>
         </action>
-
-        <!-- test -->
-        <action name="menu" class="actions.MenuAction" method="home">
-            <interceptor-ref name="loginStack"/>
-            <result name="administrador">/JSP/menuAdmin.jsp</result>
-            <result name="empleado">/JSP/menuEmpleado.jsp</result>
-            <result name="cliente">/JSP/index.jsp</result>
-            <result name="login">/JSP/login.jsp</result>
+        
+        <!-- Otros Link -->
+        <action name="menuAdmin">
+            <result name="success">/JSP/menuAdmin.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        
+        <action name="menuEmpleado">
+            <result name="success">/JSP/menuEmpleado.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        
+        <action name="index">
+            <result name="success">/JSP/index.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
         </action> 
         
         <!-- Clientes CRUD -->
         <action name="clienteC" class="actions.ClienteAction" method="registrarCliente">
             <result name="success" type="redirect">clienteR</result>
-            
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        
+        <action name="clienteC2" class="actions.ClienteAction" method="registrarCliente">
+            <result name="success">success.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteR" class="actions.ClienteAction" method="consultarClientes">
             <result name="success">clienteR.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteU1" class="actions.ClienteAction" method="consultarClienteIndividual">
             <result name="success">/JSP/clienteU.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteU2" class="actions.ClienteAction" method="actualizarCliente">
             <result name="success" type="redirect">clienteR</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="clienteD" class="actions.ClienteAction" method="eliminarCliente">
             <result name="success" type="redirect">clienteR</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <!-- Clientes Link -->
         <action name="clienteCreate">
             <result name="success">/JSP/clienteC.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        
+        <action name="clienteCreate2">
+            <result name="success">/JSP/clienteC2.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <!-- Empleados CRUD -->
         <action name="empleadoC" class="actions.EmpleadoAction" method="registrarEmpleado">
             <result name="success" type="redirect">empleadoR</result>
-            
+            <result name="input">/JSP/error.jsp</result>
         </action> 
         
         <action name="empleadoR" class="actions.EmpleadoAction" method="consultarEmpleados">
             <result name="success">/JSP/empleadoR.jsp</result>
-            
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="empleadoU1" class="actions.EmpleadoAction" method="consultarEmpleadoIndividual">
             <result name="success">/JSP/empleadoU.jsp</result>
-            
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="empleadoU2" class="actions.EmpleadoAction" method="actualizarEmpleado">
             <result name="success" type="redirect">empleadoR</result>
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <action name="empleadoD" class="actions.EmpleadoAction" method="eliminarEmpleado">
             <result name="success" type="redirect">empleadoR</result>
-
+            <result name="input">/JSP/error.jsp</result>
         </action>
         
         <!-- Empleados Link -->
         <action name="empleadoCreate">
             <result name="success">/JSP/empleadoC.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
         </action> 
+        
+        <!-- Menú productos -->
+        <action name="tecnologia">
+            <result name="success">/JSP/Productos/tecnologia.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="computadoras">
+            <result name="success">/JSP/Productos/computadoras.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="deporte">
+            <result name="success">/JSP/Productos/deporte.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="hogar">
+            <result name="success">/JSP/Productos/hogar.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="muebles">
+            <result name="success">/JSP/Productos/muebles.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="lineaBlanca">
+            <result name="success">/JSP/Productos/lineaBlanca.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="saludYBelleza">
+            <result name="success">/JSP/Productos/saludYBelleza.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="damas">
+            <result name="success">/JSP/Productos/damas.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="caballeros">
+            <result name="success">/JSP/Productos/caballeros.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="zapatos">
+            <result name="success">/JSP/Productos/zapatos.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="bebes">
+            <result name="success">/JSP/Productos/bebes.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="infantil">
+            <result name="success">/JSP/Productos/infantil.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="videojuegos">
+            <result name="success">/JSP/Productos/videojuegos.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="juguetes">
+            <result name="success">/JSP/Productos/juguetes.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="libros">
+            <result name="success">/JSP/Productos/libros.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
+        <action name="vinos">
+            <result name="success">/JSP/Productos/vinos.jsp</result>
+            <result name="input">/JSP/error.jsp</result>
+        </action>
 
-</package>
+    </package>
 </struts>

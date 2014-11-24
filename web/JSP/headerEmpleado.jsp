@@ -60,36 +60,28 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <s:url id="menu" action="menuAdmin.action"/>
-                <s:a href="%{menu}">Menú Administrador</s:a>
+            <s:url id="menu" action="menuEmpleado.action"/>
+            <s:a href="%{menu}">Menú Empleado</s:a>
             </li>
             <li>
-                <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/admin.png" width="10%" height="10%"> Administradores</s:a>
+            <s:url id="consultarEmpleados" action="consultarE.action"/>
+            <s:a href="%{consultarEmpleados}"><img src="../imagenes/productos.png" width="10%" height="10%"> Productos</s:a>
             </li>
             <li>
-                <s:url id="consultarEmpleados" action="empleadoR.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/empleado.png" width="10%" height="10%"> Empleados</s:a>
+            <s:url id="consultarEmpleados" action="consultarE.action"/>
+            <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte2.png" width="10%" height="10%"> Reporte de inventario</s:a>
             </li>
             <li>
-                <s:url id="consultarEmpleados" action="clienteR.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/cliente.png" width="10%" height="10%"> Clientes</s:a>
+            <s:url id="consultarEmpleados" action="consultarE.action"/>
+            <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte.png" width="10%" height="10%"> Reporte de ventas</s:a>
             </li>
             <li>
-                <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte2.png" width="10%" height="10%"> Reporte de inventario</s:a>
+            <s:url id="consultarEmpleados" action="consultarE.action"/>
+            <s:a href="%{consultarEmpleados}"><img src="../imagenes/cuenta.png" width="10%" height="10%"> Cuenta</s:a>
             </li>
             <li>
-                <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/reporte.png" width="10%" height="10%"> Reporte estadístico</s:a>
-            </li>
-            <li>
-                <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/cuenta.png" width="10%" height="10%"> Cuenta</s:a>
-            </li>
-            <li>
-                <s:url id="consultarEmpleados" action="consultarE.action"/>
-                <s:a href="%{consultarEmpleados}"><img src="../imagenes/cerrar.png" width="10%" height="10%"> Cerrar sesión</s:a>
+            <s:url id="consultarEmpleados" action="consultarE.action"/>
+            <s:a href="%{consultarEmpleados}"><img src="../imagenes/cerrar.png" width="10%" height="10%"> Cerrar sesión</s:a>
             </li>
         </ul>
     </nav>
@@ -97,18 +89,18 @@
     <br>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <s:url id="menu" action="menuAdmin.action"/>
+            <s:url id="menu" action="menuEmpleado.action"/>
             <s:a href="%{menu}"><img src="../imagenes/Logo-Liverpool.jpg" class="img-rounded" width="100%" height="25%"></s:a>
         </div>
 
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                
+
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <a class="btn btn-primary" href="#miventana" rel="tooltip" data-toggle="modal" role="button">Cerrar sesión</a>
                 <a class="btn btn-primary" href="registro_usuario.jsp" role="button">Cuenta</a>
-                <img src="../imagenes/user.png" class="img-rounded" width="12.5%" height="25%"><span class="badge">Admin</span>
+                <img src="../imagenes/user.png" class="img-rounded" width="12.5%" height="25%"><span class="badge">Empleado</span>
             </div>
         </div>
 
@@ -120,35 +112,35 @@
         </div>
     </div>
 
-<!-- Custom Theme JavaScript -->
+    <!-- Custom Theme JavaScript -->
     <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
+        // Closes the sidebar menu
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
         });
-    });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Scrolls to the selected menu item on the page
+        $(function() {
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
     </script>
- 
+

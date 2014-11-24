@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Liverpool</title>
+        <title>Liverpool - Menú Administrador</title>
         <%@include file="headerAdmin.jsp"%>
 
     <div class="container">
@@ -41,7 +41,7 @@
             <img class="img-rounded" src="../imagenes/rosa.jpg" width="100%" height="2">
             <br/><br/>
             <div class="col-4 col-sm-4 col-lg-4">
-                <img class="img-rounded center-block" src="../imagenes/report.png">
+                <img class="img-rounded center-block" src="../imagenes/reporte3.png" width="50%" height="50%">
                 <h2 class="text-center">Reportes</h2>
                 <p class="text-center"><s:a href="%{actualizarUsuario}" cssClass="btn btn-primary">Reporte inventario &raquo;</s:a></p>
                 <p class="text-center"><s:a href="%{actualizarUsuario}" cssClass="btn btn-primary">Reporte estadístico &raquo;</s:a></p>
