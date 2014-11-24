@@ -4,11 +4,35 @@
 
 <struts>
     <!-- Configuration for the default package. -->
-    <package name="default" extends="struts-default">
+<package name="default" extends="struts-default"> 
         
-        <action name="menu">
-            <result name="success">/JSP/menuAdmin.jsp</result>
-            <result name="input">/JSP/error.jsp</result>
+         <!-- Interceptor Login-->
+        <interceptors>
+                <interceptor class="interceptors.LoginInterceptor" name="loginInterceptor">
+                </interceptor>
+                <interceptor-stack name="loginStack">
+                        <interceptor-ref name="loginInterceptor" />
+                        <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+        </interceptors>
+        
+         <!-- Login-->
+         <action name="actionlogin" class="actions.LoginAction" method="login">
+            <result name="success">/JSP/index.jsp</result>
+            <result name="login">/JSP/login.jsp</result>
+        </action> 
+        
+        <action name="actionLogout" class="actions.LoginAction" method="logOut">
+                <result name="success">/JSP/index.jsp</result>
+        </action>
+
+        <!-- test -->
+        <action name="menu" class="actions.MenuAction" method="home">
+            <interceptor-ref name="loginStack"/>
+            <result name="administrador">/JSP/menuAdmin.jsp</result>
+            <result name="empleado">/JSP/menuEmpleado.jsp</result>
+            <result name="cliente">/JSP/index.jsp</result>
+            <result name="login">/JSP/login.jsp</result>
         </action> 
         
         <!-- Clientes CRUD -->
@@ -75,5 +99,5 @@
             <result name="input">/JSP/error.jsp</result>
         </action> 
 
-    </package>
+</package>
 </struts>
